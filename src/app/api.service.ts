@@ -15,4 +15,8 @@ export class ApiService {
   get(endpoint: string): Observable<any> {
     return this.httpClient.get(`${this.SERVER_URL}/${endpoint}`, { headers: this.headers });
   }
+
+  upload(endpoint: string, formData: FormData): Observable<any> {
+    return this.httpClient.post(`${this.SERVER_URL}/${endpoint}`, formData, { headers: this.headers });
+  }
 }

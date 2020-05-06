@@ -1,1 +1,11 @@
-<p>movies-add works!</p>
+<h3>Add movies by uploading a .csv file</h3>
+<div>
+  <form [formGroup] = "uploadForm" (ngSubmit)="onSubmit()">      
+    <div>
+      <input type="file" name="movies" (change)="onFileSelect($event)" />
+    </div>
+    <div>
+      <button type="submit">Upload</button>
+    </div>
+  </form>
+</div>
