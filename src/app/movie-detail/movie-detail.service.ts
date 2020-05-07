@@ -7,7 +7,7 @@ import { MovieDetail } from './movie-detail';
 export class MovieDetailService {
   constructor(private api: ApiService) { }
 
-  getMovie(movie_id: string): Observable<MovieDetail> {
-    return this.api.get(`movies/${movie_id}`);
+  getMovie(movieId: string): Observable<MovieDetail> {
+    return this.api.get(`movies/${movieId}`);
   }
 }

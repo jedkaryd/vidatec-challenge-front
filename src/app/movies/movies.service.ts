@@ -5,13 +5,13 @@ import { MovieResponse } from './movies';
 
 @Injectable({providedIn: 'root'})
 export class MoviesService {
-  limit: number = 10;
-  currentPage: number = 1;
+  limit = 10;
+  currentPage = 1;
   constructor(private api: ApiService) { }
 
   getMovies(page: number, title?: string): Observable<MovieResponse> {
-    let url = `movies?page=${page}&limit=${this.limit}`
-    if (title) url += `&title=${title}`
+    let url = `movies?page=${page}&limit=${this.limit}`;
+    if (title) { url += `&title=${title}`; }
     return this.api.get(url);
   }
 }

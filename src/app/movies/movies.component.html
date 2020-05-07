@@ -1,6 +1,10 @@
 <div style="padding: 13px;">
-  <div>Filter by title: <input [(ngModel)]="title"></div>
-  <button mat-button (click)="filterByTitle()"> Filter </button>
+<form [formGroup]="form">
+  <div>Filter by title: <input formControlName="title"></div>
+</form>
+
+
+  <!-- <button mat-raised-button (click)="filterByTitle()"> Filter </button> -->
 
     <mat-card *ngFor="let movie of movieResponse.docs" [routerLink]="'/movies/' + movie._id" style="margin-top:10px;">
       <mat-card-header>
@@ -17,6 +21,6 @@
       </mat-card-content>
   </mat-card>
   <p> Page: {{movieResponse.page}}</p>
-  <button mat-button (click)="changePage(false)"> Prev page </button>
-  <button mat-button (click)="changePage(true)"> Next page </button>
+  <button mat-raised-button (click)="changePage(false)"> Prev page </button>
+  <button mat-raised-button (click)="changePage(true)"> Next page </button>
 </div>

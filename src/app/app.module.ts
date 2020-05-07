@@ -7,11 +7,11 @@ import { AppComponent } from './app.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MoviesAddComponent } from './movies-add/movies-add.component';
 
-import { MatToolbarModule } from "@angular/material/toolbar";
-import { MatIconModule } from "@angular/material/icon";
-import { MatButtonModule } from "@angular/material/button";
-import { MatCardModule } from "@angular/material/card";
-import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 

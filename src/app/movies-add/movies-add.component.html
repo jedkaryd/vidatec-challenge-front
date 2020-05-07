@@ -2,7 +2,7 @@
 <div>
   <form [formGroup] = "uploadForm" (ngSubmit)="onSubmit()">      
     <div>
-      <input type="file" name="movies" (change)="onFileSelect($event)" />
+      <input type="file" name="movies" (change)="onFileSelect($event.target)" />
     </div>
     <div>
       <button type="submit">Upload</button>

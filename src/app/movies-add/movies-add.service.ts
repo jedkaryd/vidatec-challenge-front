@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 export class MoviesAddService {
   constructor(private api: ApiService) { }
 
-  postMovies(formData): Observable<any>  {
-    return this.api.upload(`movies`, formData);
+  postMovies(formData: FormData): Observable<any>  {
+    return this.api.upload('movies', formData);
   }
 }

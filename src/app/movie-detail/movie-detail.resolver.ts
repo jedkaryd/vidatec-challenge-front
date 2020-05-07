@@ -25,7 +25,7 @@ export class MovieDetailResolver implements Resolve<MovieDetail> {
     );
   }
 
-  redirect404() {
+  redirect404(): void {
     this.router.navigateByUrl('/');
   }
 }
