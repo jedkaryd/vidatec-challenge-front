@@ -13,12 +13,14 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MoviesComponent,
-    MoviesAddComponent
+    MoviesAddComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,

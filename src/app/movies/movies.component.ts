@@ -12,6 +12,7 @@ import { MoviesService } from './movies.service';
 })
 export class MoviesComponent implements OnDestroy {
   movieResponse: MovieResponse = this.route.snapshot.data.movies;
+  title: string = '';
   private subscription = new Subscription();
 
   constructor(private movies: MoviesService, private route: ActivatedRoute) { }
@@ -20,6 +21,18 @@ export class MoviesComponent implements OnDestroy {
     this.movies.currentPage = next ? this.movies.currentPage +1 : this.movies.currentPage - 1;
     this.subscription.add(
       this.movies.getMovies(this.movies.currentPage)
+      .pipe(
+        tap((response) => {
+          this.movieResponse = response;
+        }),
+      )
+      .subscribe()
+    );
+  }
+
+  filterByTitle(): void {
+    this.subscription.add(
+      this.movies.getMovies(this.movies.currentPage, this.title)
       .pipe(
         tap((response) => {
           this.movieResponse = response;

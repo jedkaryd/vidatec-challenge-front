@@ -1,9 +1,11 @@
 <div style="padding: 13px;">
-  <mat-card *ngFor="let movie of movieResponse.docs" style="margin-top:10px;">
+  <div>Filter by title: <input [(ngModel)]="title"></div>
+  <button mat-button (click)="filterByTitle()"> Filter </button>
+
+    <mat-card *ngFor="let movie of movieResponse.docs" [routerLink]="'/movies/' + movie._id" style="margin-top:10px;">
       <mat-card-header>
           <mat-card-title>{{movie.title}}</mat-card-title>
-          <mat-card-subtitle>{{movie.director}} / {{movie.year}}
-          </mat-card-subtitle>
+          <mat-card-subtitle>{{movie.director}} / {{movie.year}}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
           <p>

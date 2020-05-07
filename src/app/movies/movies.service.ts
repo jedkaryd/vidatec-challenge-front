@@ -9,7 +9,9 @@ export class MoviesService {
   currentPage: number = 1;
   constructor(private api: ApiService) { }
 
-  getMovies(page: number): Observable<MovieResponse> {
-    return this.api.get(`movies?page=${page}&limit=${this.limit}`);
+  getMovies(page: number, title?: string): Observable<MovieResponse> {
+    let url = `movies?page=${page}&limit=${this.limit}`
+    if (title) url += `&title=${title}`
+    return this.api.get(url);
   }
 }
